@@ -37,6 +37,12 @@ if 'CODESPACE_NAME' in os.environ:
 # Application definition
 
 INSTALLED_APPS = [
+    # Мои приложения
+    'learning_logs',
+    'users',
+    # Сторонние приложения
+    'bootstrap4',
+    # Приложения django по умолчанию.
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -64,7 +70,7 @@ ROOT_URLCONF = "hello_world.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "hello_world" / "templates"],
+        "DIRS": [BASE_DIR / "learning_logs" / "templates" / "learning_logs"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -140,3 +146,6 @@ MEDIA_ROOT = BASE_DIR / "hello_world" / "media"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Мои настройки
+LOGIN_URL = '/users/login/'

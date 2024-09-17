@@ -24,7 +24,9 @@ from hello_world.core import views as core_views
 
 urlpatterns = [
     path("", core_views.index),
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('', include('learning_logs.urls')),
+    path('users/', include('users.urls', namespace='users')),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 if settings.DEBUG:
